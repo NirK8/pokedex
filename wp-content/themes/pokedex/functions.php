@@ -38,4 +38,9 @@ function console_log($output, $with_script_tags = true) {
   }
   echo $js_code;
 }
+function print_pokemon_type($type) {
+  $type = $type->type->name;
+  $args = array($type = $type);
+  get_template_part('type', null, $args);
+}
 ?>

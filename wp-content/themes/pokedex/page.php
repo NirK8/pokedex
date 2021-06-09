@@ -10,11 +10,18 @@
     < ?php endwhile; ?>
   </main> -->
 
-  <!-- < ?php 
-  $results = json_decode(wp_remote_retrieve_body(wp_remote_get('https://pokeapi.co/api/v2/pokemon/1')));
+<?php 
+  $id = $_GET['id'];
+  $pokemon = json_decode(wp_remote_retrieve_body(wp_remote_get('https://pokeapi.co/api/v2/pokemon/' . $id)));
 ?>
-  <h1>< ?php echo $results->name ?></h1>
-  <img class="poke-img" src="< ?php echo $results->sprites->front_default ?>"  />
-  <h1>Hello from front-page.php</h1> -->
-
+  <!-- ID -->
+  <h4><?php echo $pokemon->id ?></h4>
+  <!-- Image -->
+  <img class="poke-img" src="<?php echo $pokemon->sprites->front_default ?>"  />
+  <!-- Name -->
+  <h1><?php echo $pokemon->name ?></h1>
+  <!-- Types -->
+  <?php 
+  array_map('print_pokemon_type', $pokemon->types);
+  ?>
 <?php get_footer(); ?> 
