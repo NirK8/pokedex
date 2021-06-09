@@ -27,8 +27,8 @@ add_action('wp_enqueue_scripts', 'lapizzeria_styles');
 add_action('wp_enqueue_scripts', 'lapizzeria_scripts');
 
 function print_pokemon_card($pokemon) {
-  $args = array($url = $pokemon->url);
-  get_template_part('card', null, $args);
+  // $args = array($url = $pokemon->url);
+  get_template_part('card', null, array($url = $pokemon->url));
 }
 function console_log($output, $with_script_tags = true) {
   $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . 
@@ -40,7 +40,12 @@ function console_log($output, $with_script_tags = true) {
 }
 function print_pokemon_type($type) {
   $type = $type->type->name;
-  $args = array($type = $type);
-  get_template_part('type', null, $args);
+  get_template_part('type', null, array($type = $type));
+}
+function print_pokemon_description($specie_url) {
+  $specie = json_decode(wp_remote_retrieve_body(wp_remote_get($specie_url)));
+  $description = $specie->flavor_text_entries[0]->flavor_text;
+  // $args = array($description = $description);
+  get_template_part('description', null, array($description = $description));
 }
 ?>

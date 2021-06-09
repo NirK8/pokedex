@@ -6,7 +6,7 @@
   console_log($results);
   $pokeId = $_GET['pokeId'];
   console_log($pokeId);
-  // array_map('print_pokemon_card', $results);
+  array_map('print_pokemon_card', $results);
 ?>
   
 <?php get_footer(); ?>
