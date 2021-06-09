@@ -1,0 +1,22 @@
+/*
+    Theme Name: Pokedex
+    Theme URI: 
+    Author: Nir Kahana
+    Author URI: 
+    Description: Theme for Pokemons
+    Version: 1.0
+    License: GNU Public License v2 or later
+    License URI: http://www.gnu.org/licenses/glp-2.0.html
+    Tags: pokemon, mobile first, responsive, pokedex
+    Text Domain: pokedex
+*/
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.site-logo {
+  height: 200px;
+}
+.poke-img{ 
+  height: 200px;
+}
