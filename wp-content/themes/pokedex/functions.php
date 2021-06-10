@@ -78,6 +78,7 @@ function print_pokemon_stats($stats_array) {
 function print_stat($stat) {
   get_template_part('stat', null, array($stat));
 }
+// takes an array of integers and prints a nav-bar based on those integers.
 function print_nav_bar($page) {
   $nav_items = [intval($page-2), intval($page-1), intval($page), intval($page+1), intval($page+2)];
   $filtered_nav_items = array(...array_filter($nav_items, 'is_between_0_and_94'));
@@ -89,11 +90,12 @@ function print_nav_bar($page) {
   </div>
   <?php
 }
+// returns a boolean
 function is_between_0_and_94($integer) {
   return ($integer > 0 && $integer < 94);
 }
+// Takes a nav-item (integer) and prints it in the nav-bar
 function print_nav_item($nav_item) {
-  // console_log($nav_item);
   get_template_part('nav-item', null, array($nav_item));
 }
 ?>
