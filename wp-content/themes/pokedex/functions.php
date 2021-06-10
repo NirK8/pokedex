@@ -48,6 +48,18 @@ function format_stat($stat) {
   $formattedStat->stat_value = $stat->base_stat; 
   return $formattedStat;
 }
+function add_total_to_stats($formatted_stats_array) {
+  function sum_stat_values($carry, $stat) {
+    $carry += $stat->stat_value;
+    return $carry;
+  }
+  $total_value = array_reduce($formatted_stats_array, "sum_stat_values", 0);
+  $total = new stdClass();
+  $total->stat_key = 'total';
+  $total->stat_value = $total_value;
+  array_push($formatted_stats_array, $total);
+  return $formatted_stats_array;  
+}
 function print_pokemon_type($type) {
   $type = $type->type->name;
   get_template_part('type', null, array($type = $type));
@@ -60,6 +72,7 @@ function print_pokemon_description($specie_url) {
 }
 function print_pokemon_stats($stats_array) {
   $formatted_stats_array = array_map('format_stat', $stats_array);
+  $formatted_stats_array = add_total_to_stats($formatted_stats_array);
   get_template_part('stats', null, $formatted_stats_array);
 }
 function print_stat($stat) {
