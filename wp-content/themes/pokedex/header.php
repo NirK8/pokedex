@@ -6,5 +6,7 @@
 </head>
 <body>
   <header>
-  
+    <a href="/pokedex">
+      <img class="logo" src="<?php echo get_template_directory_uri() . "/img/logo.jpg" ?>"/>
+    </a>
   </header>

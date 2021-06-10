@@ -8,12 +8,7 @@ function lapizzeria_styles() {
   wp_enqueue_style('normalize');
   wp_enqueue_style('style');
 }
-function lapizzeria_menus() {
-  // WordPress function
-  register_nav_menus( array(
-    'main-menu' => 'Main Menu'
-  ));
-}
+
 // Adds stylesheets and JS files
 function lapizzeria_scripts() {
   // Google fonts
@@ -22,12 +17,10 @@ function lapizzeria_scripts() {
   // wp_enqueue_script( 'axios', 'https://unpkg.com/axios/dist/axios.min.js' );
 } 
 
-add_action('init', 'lapizzeria_menus');
 add_action('wp_enqueue_scripts', 'lapizzeria_styles');
 add_action('wp_enqueue_scripts', 'lapizzeria_scripts');
 
 function print_pokemon_card($pokemon) {
-  // $args = array($url = $pokemon->url);
   get_template_part('card', null, array($url = $pokemon->url));
 }
 function console_log($output, $with_script_tags = true) {
@@ -38,12 +31,8 @@ function console_log($output, $with_script_tags = true) {
   }
   echo $js_code;
 }
-Class Stat {
-  public $stat_key;
-  public $stat_value;
-}
 function format_stat($stat) {
-  $formattedStat = new Stat();
+  $formattedStat = new stdClass();
   $formattedStat->stat_key = $stat->stat->name; 
   $formattedStat->stat_value = $stat->base_stat; 
   return $formattedStat;
@@ -57,7 +46,7 @@ function add_total_to_stats($formatted_stats_array) {
   $total = new stdClass();
   $total->stat_key = 'total';
   $total->stat_value = $total_value;
-  array_push($formatted_stats_array, $total);
+  $formatted_stats_array[] = $total;
   return $formatted_stats_array;  
 }
 function print_pokemon_type($type) {
