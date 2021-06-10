@@ -13,7 +13,6 @@
 <?php 
   $id = $_GET['id'];
   $pokemon = json_decode(wp_remote_retrieve_body(wp_remote_get('https://pokeapi.co/api/v2/pokemon/' . $id)));
-  $specie_url = $pokemon->species->url;
 ?>
   <!-- ID -->
   <h4><?php echo $pokemon->id ?></h4>
@@ -25,6 +24,8 @@
   // Types
   array_map('print_pokemon_type', $pokemon->types);
   // Description
-  print_pokemon_description($specie_url)
+  print_pokemon_description($pokemon->species->url);
+  // Stats
+  print_pokemon_stats($pokemon->stats);
   ?>
-<?php get_footer(); ?> 
+<?php get_footer(); ?>

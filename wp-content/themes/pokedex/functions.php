@@ -38,6 +38,16 @@ function console_log($output, $with_script_tags = true) {
   }
   echo $js_code;
 }
+Class Stat {
+  public $stat_key;
+  public $stat_value;
+}
+function format_stat($stat) {
+  $formattedStat = new Stat();
+  $formattedStat->stat_key = $stat->stat->name; 
+  $formattedStat->stat_value = $stat->base_stat; 
+  return $formattedStat;
+}
 function print_pokemon_type($type) {
   $type = $type->type->name;
   get_template_part('type', null, array($type = $type));
@@ -48,4 +58,13 @@ function print_pokemon_description($specie_url) {
   // $args = array($description = $description);
   get_template_part('description', null, array($description = $description));
 }
+function print_pokemon_stats($stats_array) {
+  $formatted_stats_array = array_map('format_stat', $stats_array);
+  get_template_part('stats', null, $formatted_stats_array);
+}
+function print_stat($stat) {
+  $args = array($stat);
+  get_template_part('stat', null, $args);
+}
+
 ?>
