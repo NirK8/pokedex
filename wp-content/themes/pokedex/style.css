@@ -10,14 +10,99 @@
     Tags: pokemon, mobile first, responsive, pokedex
     Text Domain: pokedex
 */
+:root {
+  --main-bg-color: #F7F7F9;
+  --light-grey: #F7F7F9;
+  --light-blue: #373299;
+
+  --normal-bg-color: #A8A77A;
+  --fire-bg-color: #EE8130;
+  --water-bg-color: #6390F0;
+  --electric-bg-color: #F7D02C;
+  --grass-bg-color: #7AC74C;
+  --ice-bg-color: #96D9D6;
+  --fighting-bg-color: #C22E28;
+  --poison-bg-color: #A33EA1;
+  --ground-bg-color: #E2BF65;
+  --flying-bg-color: #A98FF3;
+  --psychic-bg-color: #F95587;
+  --bug-bg-color: #A6B91A;
+  --rock-bg-color: #B6A136;
+  --ghost-bg-color: #735797;
+  --dragon-bg-color: #6F35FC;
+  --dark-bg-color: #705746;
+  --steel-bg-color: #B7B7CE;
+  --fairy-bg-color: #D685AD;
+}
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--main-bg-color);
+}
+.logo {
+  /* position: absolute; */
+  width: 387px;
+  height: 140px;
+}
+.h200px {
+  height: 200px;
+}
+.poke-img { 
+  height: 300px;
+  margin: auto;
+}
+.normal {
+  background-color: var(--normal-bg-color);
+}
+.fire {
+  background-color: var(--fire-bg-color);
+}
+.water {
+  background-color: var(--water-bg-color);
+}
+.electric {
+  background-color: var(--electric-bg-color);
+}
+.grass {
+  background-color: var(--grass-bg-color);
+}
+.ice {
+  background-color: var(--ice-bg-color);
+}
+.fighting {
+  background-color: var(--fighting-bg-color);
+}
+.poison {
+  background-color: var(--poison-bg-color);
+}
+.ground {
+  background-color: var(--ground-bg-color);
+}
+.flying {
+  background-color: var(--flying-bg-color);
+}
+.psychic {
+  background-color: var(--psychic-bg-color);
+}
+.bug {
+  background-color: var(--bug-bg-color);
+}
+.rock {
+  background-color: var(--rock-bg-color);
+}
+.ghost {
+  background-color: var(--ghost-bg-color);
+}
+.dragon {
+  background-color: var(--dragon-bg-color);
+}
+.dark {
+  background-color: var(--dark-bg-color);
+}
+.steel {
+  background-color: var(--steel-bg-color);
+}
+.fairy {
+  background-color: var(--fairy-bg-color);
 }
 
-.logo {
-  height: 200px;
-}
-.poke-img{ 
-  height: 200px;
-}
