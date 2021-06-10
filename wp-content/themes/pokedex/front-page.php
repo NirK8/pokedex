@@ -1,9 +1,13 @@
 <?php get_header();
 
-
-  $response = json_decode(wp_remote_retrieve_body(wp_remote_get('https://pokeapi.co/api/v2/pokemon?limit=12&offset=0')));
+  $page = $_GET['page'];
+  $offset = 0;
+  if($page) {
+    $offset = (intval($page)-1) * 12;
+  }
+  $url = 'https://pokeapi.co/api/v2/pokemon?limit=12&offset=' . $offset;
+  $response = json_decode(wp_remote_retrieve_body(wp_remote_get($url)));
   $results = $response->results;
-  $pokeId = $_GET['pokeId'];
   array_map('print_pokemon_card', $results);
 ?>
   

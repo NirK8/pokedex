@@ -78,5 +78,4 @@ function print_pokemon_stats($stats_array) {
 function print_stat($stat) {
   get_template_part('stat', null, array($stat));
 }
-
 ?>
