@@ -10,69 +10,99 @@
     Tags: pokemon, mobile first, responsive, pokedex
     Text Domain: pokedex
 */
+:root {
+  --main-bg-color: #F7F7F9;
+  --light-grey: #F7F7F9;
+  --light-blue: #373299;
+
+  --normal-bg-color: #A8A77A;
+  --fire-bg-color: #EE8130;
+  --water-bg-color: #6390F0;
+  --electric-bg-color: #F7D02C;
+  --grass-bg-color: #7AC74C;
+  --ice-bg-color: #96D9D6;
+  --fighting-bg-color: #C22E28;
+  --poison-bg-color: #A33EA1;
+  --ground-bg-color: #E2BF65;
+  --flying-bg-color: #A98FF3;
+  --psychic-bg-color: #F95587;
+  --bug-bg-color: #A6B91A;
+  --rock-bg-color: #B6A136;
+  --ghost-bg-color: #735797;
+  --dragon-bg-color: #6F35FC;
+  --dark-bg-color: #705746;
+  --steel-bg-color: #B7B7CE;
+  --fairy-bg-color: #D685AD;
+}
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  background-color: var(--main-bg-color);
+}
+.logo {
+  /* position: absolute; */
+  width: 387px;
+  height: 140px;
 }
 .h200px {
   height: 200px;
 }
-.poke-img{ 
+.poke-img { 
   height: 300px;
   margin: auto;
 }
 .normal {
-  background-color: #A8A77A;
+  background-color: var(--normal-bg-color);
 }
 .fire {
-  background-color: #EE8130;
+  background-color: var(--fire-bg-color);
 }
 .water {
-  background-color: #6390F0;
+  background-color: var(--water-bg-color);
 }
 .electric {
-  background-color: #F7D02C;
+  background-color: var(--electric-bg-color);
 }
 .grass {
-  background-color: #7AC74C;
+  background-color: var(--grass-bg-color);
 }
 .ice {
-  background-color: #96D9D6;
+  background-color: var(--ice-bg-color);
 }
 .fighting {
-  background-color: #C22E28;
+  background-color: var(--fighting-bg-color);
 }
 .poison {
-  background-color: #A33EA1;
+  background-color: var(--poison-bg-color);
 }
 .ground {
-  background-color: #E2BF65;
+  background-color: var(--ground-bg-color);
 }
 .flying {
-  background-color: #A98FF3;
+  background-color: var(--flying-bg-color);
 }
 .psychic {
-  background-color: #F95587;
+  background-color: var(--psychic-bg-color);
 }
 .bug {
-  background-color: #A6B91A;
+  background-color: var(--bug-bg-color);
 }
 .rock {
-  background-color: #B6A136;
+  background-color: var(--rock-bg-color);
 }
 .ghost {
-  background-color: #735797;
+  background-color: var(--ghost-bg-color);
 }
 .dragon {
-  background-color: #6F35FC;
+  background-color: var(--dragon-bg-color);
 }
 .dark {
-  background-color: #705746;
+  background-color: var(--dark-bg-color);
 }
 .steel {
-  background-color: #B7B7CE;
+  background-color: var(--steel-bg-color);
 }
 .fairy {
-  background-color: #D685AD;
+  background-color: var(--fairy-bg-color);
 }
 
