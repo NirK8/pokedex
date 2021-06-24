@@ -22,7 +22,7 @@ add_action('wp_enqueue_scripts', 'pokedex_scripts');
 // Function. Receives a pokemon object and prints a card which displays all the pokemon data. 
 function print_pokemon_card($pokemon) {
   // calls the 'card' template (card.php), passing the pokemon url as the only argument. 
-  get_template_part('card', null, array($url = $pokemon->url));
+  get_template_part('partials/card', null, array($url = $pokemon->url));
 }
 // console log for php
 function console_log($output, $with_script_tags = true) {
@@ -57,13 +57,13 @@ function add_total_to_stats($formatted_stats_array) {
 // takes a pokemon type and prints the stat using the 'stat' template.
 function print_pokemon_type($type) {
   $type = $type->type->name;
-  get_template_part('type', null, array($type = $type));
+  get_template_part('partials/type', null , array($type = $type));
 }
 // takes a pokemon 'specie url' and prints the pokemon description using the 'description' template.
 function print_pokemon_description($specie_url) {
   $specie = json_decode(wp_remote_retrieve_body(wp_remote_get($specie_url)));
   $description = $specie->flavor_text_entries[0]->flavor_text;
-  get_template_part('description', null, array($description = $description));
+  get_template_part('partials/description', null, array($description = $description));
 }
 // receives an array of stats as returned from the api, and prints all the stats using the 'stats' template.
 function print_pokemon_stats($stats_array) {
@@ -72,11 +72,11 @@ function print_pokemon_stats($stats_array) {
   // adds the total value of all the stats.
   $formatted_stats_array = add_total_to_stats($formatted_stats_array);
   // call the 'stats' template.
-  get_template_part('stats', null, $formatted_stats_array);
+  get_template_part('partials/stats', null, $formatted_stats_array);
 }
 // takes a pokemon stat and prints it using the 'stat' template. 
 function print_stat($stat) {
-  get_template_part('stat', null, array($stat));
+  get_template_part('partials/stat', null, array($stat));
 }
 // takes an array of integers and prints a nav-bar based on those integers.
 function print_nav_bar($page) {
@@ -96,6 +96,6 @@ function is_between_0_and_94($integer) {
 }
 // Takes a nav-item (integer) and prints it in the nav-bar
 function print_nav_item($nav_item) {
-  get_template_part('nav-item', null, array($nav_item));
+  get_template_part('partials/nav-item', null, array($nav_item));
 }
 ?>
