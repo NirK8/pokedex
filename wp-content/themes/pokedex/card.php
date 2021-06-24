@@ -1,5 +1,4 @@
 <?php
-console_log($args[0]);
 if($args[0]) {
   $pokemon = json_decode(wp_remote_retrieve_body(wp_remote_get($args[0])));
   ?>
